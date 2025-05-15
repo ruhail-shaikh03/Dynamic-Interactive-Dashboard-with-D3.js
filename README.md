@@ -81,3 +81,17 @@ This project implements a fully interactive, data-driven dashboard using D3.js. 
     *   **Decision:** Provided clear labels for each dimension selector and brief instructions in the UI. Pre-filling selectors with plausible defaults based on common column names in the example datasets (`music_artist_dataset.json`, `pakistani_companies.json`) was implemented to speed up testing and demonstrate functionality.
 
 ## Folder Structure
+
+A3/
+├── data/ # For example JSON files (user uploads via UI)
+│ └── music_artist_dataset.json
+│ └── pakistani_companies.json
+├── js/ # JavaScript files
+│ ├── radial_bar.js # Logic for Radial Bar Chart
+│ ├── chord.js # Logic for Chord Diagram
+│ ├── force_directed.js # Logic for Force-Directed Graph
+│ ├── sunburst.js # Logic for Sunburst Chart
+│ └── dashboard.js # Main dashboard orchestration logic
+├── index.html # Main HTML page
+├── style.css # CSS for styling
+└── README.md # This file

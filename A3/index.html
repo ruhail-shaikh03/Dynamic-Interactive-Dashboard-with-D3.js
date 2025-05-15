@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D3 Interactive Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Interactive Data Dashboard</h1>
+        <div class="controls">
+            <input type="file" id="jsonFile" accept=".json">
+            <button id="loadDataButton">Load Data & Setup Dimensions</button>
+            <button id="generateDashboardButton" disabled>Generate Dashboard</button>
+        </div>
+    </header>
+
+    <main id="dashboard-container">
+        <div id="dimension-selectors" class="dimension-selectors-container" style="display: none;">
+            <h2>Select Dimensions for Charts</h2>
+            
+            <div class="chart-dimension-selector">
+                <h3>Radial Bar Chart</h3>
+                <label for="rb-category">Category:</label>
+                <select id="rb-category"></select>
+                <label for="rb-value">Value (Numeric):</label>
+                <select id="rb-value"></select>
+            </div>
+
+            <div class="chart-dimension-selector">
+                <h3>Chord Diagram</h3>
+                <label for="cd-source">Source Category:</label>
+                <select id="cd-source"></select>
+                <label for="cd-target">Target Category:</label>
+                <select id="cd-target"></select>
+                 <small>(Shows relationships between unique items in Source and Target columns)</small>
+            </div>
+
+            <div class="chart-dimension-selector">
+                <h3>Force-Directed Graph</h3>
+                <label for="fdg-nodes">Nodes (e.g., Company Name):</label>
+                <select id="fdg-nodes"></select>
+                <label for="fdg-links">Links Array (e.g., CollaboratedWith, ConnectedTo):</label>
+                <select id="fdg-links"></select>
+                <label for="fdg-group">Node Grouping (Optional, for color):</label>
+                <select id="fdg-group"></select>
+            </div>
+
+            <div class="chart-dimension-selector">
+                <h3>Sunburst Chart</h3>
+                <label for="sb-level1">Hierarchy Level 1:</label>
+                <select id="sb-level1"></select>
+                <label for="sb-level2">Hierarchy Level 2:</label>
+                <select id="sb-level2"></select>
+                <label for="sb-level3">Hierarchy Level 3 (Optional):</label>
+                <select id="sb-level3"></select>
+                <label for="sb-value">Value (Numeric, for arc size):</label>
+                <select id="sb-value"></select>
+            </div>
+        </div>
+
+        <div id="charts-area" class="charts-grid">
+            <div id="radial-bar-chart-container" class="chart-container">
+                <h4>Radial Bar Chart</h4>
+                <svg id="radial-bar-chart"></svg>
+            </div>
+            <div id="chord-diagram-container" class="chart-container">
+                <h4>Chord Diagram</h4>
+                <svg id="chord-diagram"></svg>
+            </div>
+            <div id="force-directed-graph-container" class="chart-container">
+                <h4>Force-Directed Graph</h4>
+                <svg id="force-directed-graph"></svg>
+            </div>
+            <div id="sunburst-chart-container" class="chart-container">
+                <h4>Sunburst Chart</h4>
+                <svg id="sunburst-chart"></svg>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>D3.js Dashboard Assignment</p>
+    </footer>
+
+    <!-- D3.js Library -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+    <!-- Custom JS files -->
+    <script src="js/radial_bar.js"></script>
+    <script src="js/chord.js"></script>
+    <script src="js/force_directed.js"></script>
+    <script src="js/sunburst.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
